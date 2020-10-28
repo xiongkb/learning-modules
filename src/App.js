@@ -1,7 +1,6 @@
 import React, { useState, Component } from 'react';
 import './App.css';
-import UserInput from "./Components/UserInput";
-import UserOutput from "./Components/UserOutput";
+import Person from "./Person/Person"
 
 class App extends Component {
 
@@ -17,10 +16,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Hi, Enter your name</h1>
-        <UserInput changed={this.userInputChangeHandler} name={this.state.username}/>
-        <UserOutput userName={this.state.username}/>
-        <UserOutput userName="Rub"/>
-        <UserOutput userName="Tub"/>
+        <Person />
       </div>
     );
   }
