@@ -3,20 +3,26 @@ import './App.css';
 import Person from "./Person/Person"
 
 class App extends Component {
-
   state = {
-    username: "Rubdub"
+    persons: [
+      {name: "Eric", food: "cheesecake"},
+      {name: "Coco", food: "bread"},
+      {name: "Vanilla", food: "dairy"},
+    ]
   }
 
-  userInputChangeHandler = (e) => {
-    this.setState({username: e.target.value})
+  switchDesertHandler = () => {
+    console.log("Was clicked")
   }
 
   render() {
     return (
       <div className="App">
-        <h1>Hi, Enter your name</h1>
-        <Person />
+        <h1>Favorite Desert</h1>
+        <button onClick={this.switchDesertHandler}>Switch Desert</button>
+        <Person name={this.state.persons[0].name} food={this.state.persons[0].food} > He likes pizza.</Person>
+        <Person name={this.state.persons[1].name} food={this.state.persons[1].name} />
+        <Person name={this.state.persons[2].name} food={this.state.persons[2].name} />
       </div>
     );
   }
